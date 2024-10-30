@@ -1,0 +1,788 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.10.30 15:40:04 =~=~=~=~=~=~=~=~=~=~=~=
+larixadm@sh35larixapp01:~$ ls -la /opt/
+total 40
+drwxrwxrwx 10 root     root     4096 Jun 20 18:21 .
+drwxr-xr-x 20 root     root     4096 Nov 28  2023 ..
+drwxr-xr-x  2 larixadm larixadm 4096 May 20 20:25 configs
+drwx--x--x  4 root     root     4096 Nov 24  2023 containerd
+drwxrwxr-x  3 larixadm larixadm 4096 Apr  8  2024 custom
+drwxrwxr-x  8 larixadm larixadm 4096 Jun 20 18:25 larixcpm
+drwxrwxr-x 11 larixadm larixadm 4096 Jun 20 18:34 larixcpm-core
+drwxrwxr-x  3 larixadm larixadm 4096 Oct  8 04:25 larix-informer
+drwxrwxr-x  5 larixadm larixadm 4096 Jul  7  2023 lfiles
+drwxrwxr-x  6 larixadm larixadm 4096 Jun  9  2021 venvlarix
+larixadm@sh35larixapp01:~$ 
+larixadm@sh35larixapp01:~$ 
+larixadm@sh35larixapp01:~$ cat /cd /opt/
+larixadm@sh35larixapp01:/opt$ cat configs/
+config_local.ini                .env.old
+config_local.ini.old            larixcpm-core.config_local.ini
+cpm.env                         larix-informer.config.ini
+.env                            
+larixadm@sh35larixapp01:/opt$ cat configs/config_local.ini
+[postgresql]
+database = larixcpm
+host = 10.77.79.54
+port = 5432
+user = larixcpm
+password = LK14va099u8E~146
+
+[mssql]
+database = larixcpm
+host = localhost
+port = 1433
+user = sa
+password = m0OnShaDE
+driver = {ODBC Driver 17 for SQL Server}
+
+[larixcpm]
+build = hals
+client_url = https://larix.halsdev.ru
+file.storage.path = /opt/lfiles/files
+file.storage.temp_path = /opt/lfiles/tmp
+cors.access_control_allow_origin = https://larix.halsdev.ru
+
+[larixcpm-informer]
+disabled = 0
+
+[redis]
+db = 0
+host = localhost
+password =
+port = 6379
+
+[rabbitmq]
+username = guest
+password = guest
+host = localhost
+port = 5672
+virtual_host = /
+
+[storage]
+path = /opt/lfiles/models
+
+[celery]
+broker_url = amqp://guest:guest@localhost:5672//
+result_backend = redis://localhost:6379/1
+task_default_queue = celery-democpm3
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat configs/config_local.ini.old
+[postgresql]
+database = larixcpm
+host = 10.77.79.54
+port = 5432
+user = larixcpm
+password = LK14va099u8E~146
+
+[mssql]
+database = larixcpm
+host = localhost
+port = 1433
+user = sa
+password = m0OnShaDE
+driver = {ODBC Driver 17 for SQL Server}
+
+[larixcpm]
+build = hals
+client_url = http://larix.halsdev.ru
+file.storage.path = /opt/lfiles/files
+file.storage.temp_path = /opt/lfiles/tmp
+cors.access_control_allow_origin = http://larix.halsdev.ru
+
+[larixcpm-informer]
+disabled = 0
+
+[redis]
+db = 0
+host = localhost
+password =
+port = 6379
+
+[rabbitmq]
+username = guest
+password = guest
+host = localhost
+port = 5672
+virtual_host = /
+
+[storage]
+path = /opt/lfiles/models
+
+[celery]
+broker_url = amqp://guest:guest@localhost:5672//
+result_backend = redis://localhost:6379/1
+task_default_queue = celery-democpm3
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat configs/config_local.ini.oldcpm.env
+API_SERVER=https://larix.halsdev.ru
+#https://10.77.79.53
+#https://larix.halsdev.ru
+HELP_LINK=https://cloud.bpsint.de/index.php/s/zcCd6RqpaRNrxbz
+
+#       ""
+#  ,   \W    ,      *?%-_: )
+PASSWORD_SYMBOL_REQUIRMENT=\W
+PASSWORD_NUMERIC_REQUIRMENT=0-9
+PASSWORD_LATIN_LOWER_REQUIRMENT=a-z
+PASSWORD_LATIN_UPPER_REQUIRMENT=A-Z
+PASSWORD_MIN_LENGTH=8
+PASSWORD_MAX_LENGTH=1000
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat configs/cpm.env.env
+API_SERVER=https://larix.halsdev.ru
+#https://10.77.79.53
+#https://larix.halsdev.ru
+HELP_LINK=https://cloud.bpsint.de/index.php/s/zcCd6RqpaRNrxbz
+
+#       ""
+#  ,   \W    ,      *?%-_: )
+PASSWORD_SYMBOL_REQUIRMENT=\W
+PASSWORD_NUMERIC_REQUIRMENT=0-9
+PASSWORD_LATIN_LOWER_REQUIRMENT=a-z
+PASSWORD_LATIN_UPPER_REQUIRMENT=A-Z
+PASSWORD_MIN_LENGTH=8
+PASSWORD_MAX_LENGTH=1000
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat configs/.env.env.old
+API_SERVER=https://larix.halsdev.ru
+#https://10.77.79.53
+#https://larix.halsdev.ru
+HELP_LINK=https://cloud.bpsint.de/index.php/s/zcCd6RqpaRNrxbz
+
+#       ""
+#  ,   \W    ,      *?%-_: )
+PASSWORD_SYMBOL_REQUIRMENT=\W
+PASSWORD_NUMERIC_REQUIRMENT=0-9
+PASSWORD_LATIN_LOWER_REQUIRMENT=a-z
+PASSWORD_LATIN_UPPER_REQUIRMENT=A-Z
+PASSWORD_MIN_LENGTH=8
+PASSWORD_MAX_LENGTH=1000
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat configs/.env.oldlarixcpm-core.config_local.ini
+[postgresql]
+database = larixcpm
+host = 10.77.79.54
+port = 5432
+user = larixcpm
+password = LK14va099u8E~146
+
+[mssql]
+database = larixcpm
+host = localhost
+port = 1433
+user = sa
+password = m0OnShaDE
+driver = {ODBC Driver 17 for SQL Server}
+
+[larixcpm]
+build = hals
+client_url = https://larix.halsdev.ru
+file.storage.path = /opt/lfiles/files
+file.storage.temp_path = /opt/lfiles/tmp
+cors.access_control_allow_origin = https://larix.halsdev.ru
+
+[larixcpm-informer]
+disabled = 0
+
+[redis]
+db = 0
+host = localhost
+password =
+port = 6379
+
+[rabbitmq]
+username = guest
+password = guest
+host = localhost
+port = 5672
+virtual_host = /
+
+[storage]
+path = /opt/lfiles/models
+
+[celery]
+broker_url = amqp://guest:guest@localhost:5672//
+result_backend = redis://localhost:6379/1
+task_default_queue = celery-democpm3
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat configs/larixcpm-core.config_local.inilarix-informer.config.ini
+[smtp]
+hostname = mail.hals-development.ru
+port = 25
+
+[login]
+username = larix@hals-development.ru
+password = fk2Y&MYD2HE}GDux
+
+[rabbitmq]
+username = guest
+password = guest
+host = rabbitmq
+port = 5672
+virtual_host = /
+
+[larixcpm-informer]
+sender =larix@hals-development.ru
+queue_name = larixcpm-informer
+repeated_attempts = 5
+repeated_timeout = 30
+message_timeout = 30
+server =
+authentication_required = False
+encryption_required = False
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ ls -la custom
+total 12
+drwxrwxr-x  3 larixadm larixadm 4096 Apr  8  2024 .
+drwxrwxrwx 10 root     root     4096 Jun 20 18:21 ..
+drwxrwxr-x  2 larixadm larixadm 4096 Apr  8  2024 disable-registration
+larixadm@sh35larixapp01:/opt$ ls -la custom
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ ls -la customcustomlfiles
+total 76
+drwxrwxr-x   5 larixadm larixadm  4096 Jul  7  2023 .
+drwxrwxrwx  10 root     root      4096 Jun 20 18:21 ..
+drwxrwxr-x 768 larixadm larixadm 57344 Oct 25 14:41 files
+drwxrwxr-x   2 larixadm larixadm  4096 Jul  7  2023 models
+drwxrwxr-x   2 larixadm larixadm  4096 Jul  7  2023 tmp
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ ls -la lfileslarixcpm
+total 776
+drwxrwxr-x    8 larixadm larixadm   4096 Jun 20 18:25 .
+drwxrwxrwx   10 root     root       4096 Jun 20 18:21 ..
+drwxrwxr-x    3 larixadm larixadm   4096 Jun 20 18:26 artifacts
+-rw-rw-r--    1 larixadm larixadm     62 Jun 13 16:00 .babelrc
+-rw-rw-r--    1 larixadm larixadm     46 Jun 13 16:00 .browserslistrc
+drwxrwxr-x    2 larixadm larixadm   4096 Jun 13 16:00 config
+-rw-rw-r--    1 larixadm larixadm   1080 Jun 13 16:00 custom.d.ts
+-rw-rw-r--    1 larixadm larixadm    131 Jun 13 16:00 cypress.json
+drwxrwxr-x    5 larixadm larixadm   4096 Jun 20 18:25 dist
+-rw-rw-r--    1 larixadm larixadm    117 Jun 13 16:00 Dockerfile
+-rw-rw-r--    1 larixadm larixadm    896 Jun 13 16:00 doc.server.js
+-rw-rw-r--    1 larixadm larixadm    132 Jun 13 16:00 .editorconfig
+-rw-r--r--    1 larixadm larixadm    625 Jun 20 18:22 .env
+-rw-rw-r--    1 larixadm larixadm    916 Jun 13 16:00 .env.example
+-rw-rw-r--    1 larixadm larixadm     29 Jun 13 16:00 .eslintignore
+-rw-rw-r--    1 larixadm larixadm   1499 Jun 13 16:00 .eslintrc.js
+-rw-rw-r--    1 larixadm larixadm    110 Jun 13 16:00 .gitignore
+-rw-rw-r--    1 larixadm larixadm   1228 Jun 13 16:00 .gitlab-ci.yml
+-rw-rw-r--    1 larixadm larixadm     26 Jun 13 16:00 jest.unit.json
+-rw-rw-r--    1 larixadm larixadm    508 Jun 13 16:00 jsdoc.json
+drwxrwxr-x 1113 larixadm larixadm  36864 Jun 20 18:24 node_modules
+-rw-rw-r--    1 larixadm larixadm   3463 Jun 13 16:00 package.json
+-rw-rw-r--    1 larixadm larixadm     29 Jun 13 16:00 .prettierignore
+-rw-rw-r--    1 larixadm larixadm    203 Jun 13 16:00 .prettierrc.js
+drwxrwxr-x    2 larixadm larixadm   4096 Jun 13 16:00 public
+-rw-rw-r--    1 larixadm larixadm   1393 Jun 13 16:00 README.md
+drwxrwxr-x   37 larixadm larixadm   4096 Jun 13 16:00 src
+-rw-rw-r--    1 larixadm larixadm   1206 Jun 13 16:00 tsconfig.json
+-rw-rw-r--    1 larixadm larixadm   5201 Jun 20 18:23 webpack.common.js
+-rw-rw-r--    1 larixadm larixadm    971 Jun 13 16:00 webpack.dev.js
+-rw-rw-r--    1 larixadm larixadm    864 Jun 13 16:00 webpack.prod.js
+-rw-rw-r--    1 larixadm larixadm 624165 Jun 13 16:00 yarn.lock
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat larixcpm/.env
+API_SERVER=https://larix.halsdev.ru
+#https://10.77.79.53
+#https://larix.halsdev.ru
+HELP_LINK=https://cloud.bpsint.de/index.php/s/zcCd6RqpaRNrxbz
+
+#       ""
+#  ,   \W    ,      *?%-_: )
+PASSWORD_SYMBOL_REQUIRMENT=\W
+PASSWORD_NUMERIC_REQUIRMENT=0-9
+PASSWORD_LATIN_LOWER_REQUIRMENT=a-z
+PASSWORD_LATIN_UPPER_REQUIRMENT=A-Z
+PASSWORD_MIN_LENGTH=8
+PASSWORD_MAX_LENGTH=1000
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat larixcpm/.env-core larixcpm-core larixcpm-core larixcpm-corel larixcpm-cores larixcpm-core larixcpm-core- larixcpm-corel larixcpm-corea larixcpm-core larixcpm-corelarixcpm-core
+total 204
+drwxrwxr-x 11 larixadm larixadm  4096 Jun 20 18:34 .
+drwxrwxrwx 10 root     root      4096 Jun 20 18:21 ..
+-rw-rw-r--  1 larixadm larixadm   667 May 24 13:02 alembic.ini
+drwxrwxr-x  2 larixadm larixadm  4096 May 24 13:02 bin
+drwxrwxr-x  4 larixadm larixadm  4096 May 24 13:02 build
+-rw-rw-r--  1 larixadm larixadm  2813 May 24 13:02 celeryconfig.py
+-rw-rw-r--  1 larixadm larixadm     0 May 24 13:02 CHANGES.md
+-rw-rw-r--  1 larixadm larixadm   502 May 24 13:02 config_example.ini
+-rwxr-xr-x  1 larixadm larixadm   797 Jun 20 18:22 config_local.ini
+-rw-rw-r--  1 larixadm larixadm 60708 May 24 13:02 conftest.py
+-rw-rw-r--  1 larixadm larixadm  1704 May 24 13:02 development.ini
+drwxrwxr-x  3 larixadm larixadm  4096 May 24 13:02 docker
+-rw-rw-r--  1 larixadm larixadm  2350 May 24 13:02 docker-compose.yml
+-rw-rw-r--  1 larixadm larixadm   928 May 24 13:02 Dockerfile
+-rw-rw-r--  1 larixadm larixadm   320 May 24 13:02 .dockerignore
+-rw-rw-r--  1 larixadm larixadm   214 May 24 13:02 .editorconfig
+-rw-rw-r--  1 larixadm larixadm    96 May 24 13:02 entrypoint.sh
+-rw-rw-r--  1 larixadm larixadm   300 May 24 13:02 .env.sample
+-rw-rw-r--  1 larixadm larixadm    78 May 24 13:02 .flake8
+-rw-rw-r--  1 larixadm larixadm   423 May 24 13:02 .gitignore
+-rw-rw-r--  1 larixadm larixadm   395 May 24 13:02 .gitlab-ci.yml
+srwxrwxrwx  1 larixadm larixadm     0 Jun 20 18:34 gunicorn.sock
+drwxrwxr-x 17 larixadm larixadm  4096 Jun 20 18:31 larixcpm
+drwxrwxr-x  2 larixadm larixadm  4096 Jun 20 18:30 larixcpm.egg-info
+-rw-rw-r--  1 larixadm larixadm  1973 May 24 13:02 local.ini
+drwxrwxr-x  2 larixadm larixadm  4096 Oct 28 18:00 logs
+-rw-rw-r--  1 larixadm larixadm   146 May 24 13:02 MANIFEST.in
+drwxrwxr-x  6 larixadm larixadm  4096 Jun 20 18:31 migrations
+-rw-rw-r--  1 larixadm larixadm  1737 May 24 13:02 production.ini
+drwxr-xr-x  2 larixadm larixadm  4096 Jun 20 18:34 __pycache__
+-rw-rw-r--  1 larixadm larixadm    90 May 24 13:02 pyproject.toml
+-rw-rw-r--  1 larixadm larixadm   698 May 24 13:02 pytest.ini
+-rw-rw-r--  1 larixadm larixadm  5352 May 24 13:02 README.md
+-rw-rw-r--  1 larixadm larixadm  3366 May 24 13:02 run_tests.py
+drwxrwxr-x  4 larixadm larixadm  4096 May 24 13:02 scripts
+-rw-rw-r--  1 larixadm larixadm   385 May 24 13:02 setup.cfg
+-rw-rw-r--  1 larixadm larixadm  3043 May 24 13:02 setup.py
+-rw-rw-r--  1 larixadm larixadm     9 May 24 13:02 version
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ ls -la larixcpm-core/config_local.ini larixcpm-core/config_local.ini larixcpm-core/config_local.ini larixcpm-core/config_local.inilarixcpm-core/config_local.ini larixcpm-core/config_local.ini larixcpm-core/config_local.inic larixcpm-core/config_local.inia larixcpm-core/config_local.init larixcpm-core/config_local.ini
+[postgresql]
+database = larixcpm
+host = 10.77.79.54
+port = 5432
+user = larixcpm
+password = LK14va099u8E~146
+
+[mssql]
+database = larixcpm
+host = localhost
+port = 1433
+user = sa
+password = m0OnShaDE
+driver = {ODBC Driver 17 for SQL Server}
+
+[larixcpm]
+build = hals
+client_url = https://larix.halsdev.ru
+file.storage.path = /opt/lfiles/files
+file.storage.temp_path = /opt/lfiles/tmp
+cors.access_control_allow_origin = https://larix.halsdev.ru
+
+[larixcpm-informer]
+disabled = 0
+
+[redis]
+db = 0
+host = localhost
+password =
+port = 6379
+
+[rabbitmq]
+username = guest
+password = guest
+host = localhost
+port = 5672
+virtual_host = /
+
+[storage]
+path = /opt/lfiles/models
+
+[celery]
+broker_url = amqp://guest:guest@localhost:5672//
+result_backend = redis://localhost:6379/1
+task_default_queue = celery-democpm3
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat larixcpm-core/config_local.ini larixcpm larixcpm larixcpml larixcpms larixcpm larixcpm- larixcpml larixcpma larixcpm/larix-informer
+ls: cannot access 'larixcpm/larix-informer': No such file or directory
+larixadm@sh35larixapp01:/opt$ ls -la larixcpm/larix-informerlarix-informerlarix-informerlarix-informerlarix-informerlarix-informerlarix-informerlarix-informerlarix-informerarix-informer
+total 52
+drwxrwxr-x  3 larixadm larixadm 4096 Oct  8 04:25 .
+drwxrwxrwx 10 root     root     4096 Jun 20 18:21 ..
+-rw-rw-r--  1 larixadm larixadm   28 Jan 11  2024 CHANGES.md
+-rw-rw-r--  1 larixadm larixadm  463 Jan 11  2024 config_example.ini
+-rw-r--r--  1 larixadm larixadm  438 May 20 20:41 config.ini
+-rw-rw-r--  1 larixadm larixadm  644 Jan 11  2024 docker-compose.yml
+-rw-rw-r--  1 larixadm larixadm  259 Jan 11  2024 Dockerfile
+-rw-rw-r--  1 larixadm larixadm   64 Jan 11  2024 .dockerignore
+-rw-rw-r--  1 larixadm larixadm   87 Jan 11  2024 .gitignore
+-rw-rw-r--  1 larixadm larixadm  194 Jan 11  2024 .gitlab-ci.yml
+drwxrwxr-x  4 larixadm larixadm 4096 May 20 20:43 larixcpm_informer
+-rw-rw-r--  1 larixadm larixadm  374 Jan 11  2024 README.md
+-rw-rw-r--  1 larixadm larixadm 1127 Jan 11  2024 setup.py
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ ls -la larix-informer larix-informer larix-informer larix-informerlarix-informer larix-informer larix-informerc larix-informera larix-informert larix-informer/config.ini
+[smtp]
+hostname = mail.hals-development.ru
+port = 25
+
+[login]
+username = larix@hals-development.ru
+password = fk2Y&MYD2HE}GDux
+
+[rabbitmq]
+username = guest
+password = guest
+host = rabbitmq
+port = 5672
+virtual_host = /
+
+[larixcpm-informer]
+sender =larix@hals-development.ru
+queue_name = larixcpm-informer
+repeated_attempts = 5
+repeated_timeout = 30
+message_timeout = 30
+server =
+authentication_required = False
+encryption_required = False
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat larix-informer/config.inidocker-compose.yml
+version: '3.2'
+networks:
+  informer:
+services:
+  larixcpm_informer:
+    tty: true
+    build:
+      context: .
+    container_name: larixcpm-informer
+    hostname: informer
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
+    volumes:
+      - .:/app:delegated
+    depends_on:
+      - rabbitmq
+    command: "sh -c 'python -m larixcpm_informer.wait_script && python -m larixcpm_informer'"
+    networks:
+      - informer
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: larixcpm_informer_rabbit
+    hostname: rabbitmq
+    restart: always
+    ports:
+      - 15672:15672
+      - 5672:5672
+    networks:
+      - informer
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat larix-informer/docker-compose.ymldocker-compose.ymlDockerfile
+FROM python:3.8-alpine
+
+ENV APP_ROOT=/app
+ENV PATH=${APP_ROOT}/bin:${PATH} HOME=${APP_ROOT}
+
+WORKDIR ${APP_ROOT}
+ADD . ${APP_ROOT}
+
+RUN apk add build-base python3-dev libffi-dev --update-cache
+
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -e .larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ cat /reetc/nginx/conf.d/default.conf 
+server {
+    listen       80;
+    server_name  localhost;
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+    #    proxy_pass   http://127.0.0.1;
+    #}
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+}
+
+larixadm@sh35larixapp01:/opt$ cat /etc/nginx/conf.d/default.conf             ls -la
+total 12
+drwxr-xr-x 2 root root 4096 Nov 24  2023 .
+drwxr-xr-x 5 root root 4096 Oct  8 04:29 ..
+-rw-r--r-- 1 root root 1072 Apr 11  2023 default.conf
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/conf.d/ 
+total 48
+drwxr-xr-x   5 root     root 4096 Oct  8 04:29 .
+drwxr-xr-x 112 root     root 4096 Oct 17 06:15 ..
+drwxr-xr-x   2 root     root 4096 Nov 24  2023 conf.d
+-rw-r--r--   1 root     root 1007 Apr 11  2023 fastcgi_params
+-rw-r--r--   1 root     root 5349 Apr 11  2023 mime.types
+lrwxrwxrwx   1 root     root   22 Apr 11  2023 modules -> /usr/lib/nginx/modules
+-rw-r--r--   1 root     root 1491 Nov 24  2023 nginx.conf
+-rw-r--r--   1 root     root  648 Apr 11  2023 nginx.conf.dist
+-rw-r--r--   1 www-data root    0 Nov 24  2023 on
+-rw-r--r--   1 root     root  636 Apr 11  2023 scgi_params
+drwxr-xr-x   2 root     root 4096 Nov 24  2023 sites-available
+drwxr-xr-x   2 root     root 4096 Aug 27 12:23 sites-enabled
+-rw-r--r--   1 root     root  664 Apr 11  2023 uwsgi_params
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/x/nginx.conf
+-rw-r--r-- 1 root root 1491 Nov 24  2023 /etc/nginx/nginx.conf
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/nginx.conf /etc/nginx/nginx.conf /etc/nginx/nginx.conf /etc/nginx/nginx.conf/etc/nginx/nginx.conf /etc/nginx/nginx.conf /etc/nginx/nginx.confc /etc/nginx/nginx.confa /etc/nginx/nginx.conft /etc/nginx/nginx.conf
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+worker_connections 768;
+# multi_accept on;
+}
+
+http {
+
+##
+# Basic Settings
+##
+
+sendfile on;
+tcp_nopush on;
+tcp_nodelay on;
+keepalive_timeout 65;
+types_hash_max_size 2048;
+# server_tokens off;
+
+# server_names_hash_bucket_size 64;
+# server_name_in_redirect off;
+
+include /etc/nginx/mime.types;
+default_type application/octet-stream;
+
+##
+# SSL Settings
+##
+
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+ssl_prefer_server_ciphers on;
+
+##
+# Logging Settings
+##
+
+access_log /var/log/nginx/access.log;
+error_log /var/log/nginx/error.log;
+
+##
+# Gzip Settings
+##
+
+gzip on;
+
+# gzip_vary on;
+# gzip_proxied any;
+# gzip_comp_level 6;
+# gzip_buffers 16 8k;
+# gzip_http_version 1.1;
+# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+##
+# Virtual Host Configs
+##
+
+#include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+## See sample authentication script at:
+## http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+# 
+## auth_http localhost/auth.php;
+## pop3_capabilities "TOP" "USER";
+## imap_capabilities "IMAP4rev1" "UIDPLUS";
+# 
+#server {
+#listen     localhost:110;
+#protocol   pop3;
+#proxy      on;
+#}
+# 
+#server {
+#listen     localhost:143;
+#protocol   imap;
+#proxy      on;
+#}
+#}
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ 
+larixadm@sh35larixapp01:/opt$ systemctl cat nginx
+# /lib/systemd/system/nginx.service
+[Unit]
+Description=nginx - high performance web server
+Documentation=https://nginx.org/en/docs/
+After=network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/nginx.pid
+ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
+ExecReload=/bin/sh -c "/bin/kill -s HUP $(/bin/cat /var/run/nginx.pid)"
+ExecStop=/bin/sh -c "/bin/kill -s TERM $(/bin/cat /var/run/nginx.pid)"
+
+[Install]
+WantedBy=multi-user.target
+larixadm@sh35larixapp01:/opt$ systemctl cat nginxcat /etc/nginx/nginx.conf/modules /etc/nginx/modules /etc/nginx/modules /etc/nginx/modulesl /etc/nginx/moduless /etc/nginx/modules /etc/nginx/modules- /etc/nginx/modulesl /etc/nginx/modulesa /etc/nginx/modules
+lrwxrwxrwx 1 root root 22 Apr 11  2023 /etc/nginx/modules -> /usr/lib/nginx/modules
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/moduless
+scgi_params      sites-available/ sites-enabled/   
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/sites-available/
+total 12
+drwxr-xr-x 2 root root 4096 Nov 24  2023 .
+drwxr-xr-x 5 root root 4096 Oct  8 04:29 ..
+-rw-r--r-- 1 root root 2380 Aug 27 12:23 larixcpm
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/sites-available/larixcpm 
+-rw-r--r-- 1 root root 2380 Aug 27 12:23 /etc/nginx/sites-available/larixcpm
+larixadm@sh35larixapp01:/opt$ ls -la /etc/nginx/sites-available/larixcpm cat
+upstream gunicorn {
+    server unix:/opt/larixcpm-core/gunicorn.sock;
+}
+
+server {
+    listen 80;
+
+    server_name _;
+    return 301 https://larix.halsdev.ru$request_uri;
+}
+
+#    server_name _;
+#    index index.html;
+#
+#    client_max_body_size 500M;
+#
+#    location ~ ^/api/static/(.*)$ {
+#        default_type application/javascript;
+
+#        add_header Access-Control-Allow-Origin *;
+#        add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS' always;
+#        add_header Cache-Control 'no-store, no-cache';
+#        add_header Content-Encoding gzip;
+
+#        access_log  on;
+#        alias /opt/lfiles/models/$1;
+#    }
+
+#    location ~ ^/(api.*|depot.*)$ {
+#        root      /opt/larixcpm-core;
+#        try_files $uri @backend;
+#    }
+
+#    location @backend {
+#        proxy_set_header X-Real-IP $remote_addr;
+#proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#proxy_pass     http://gunicorn;
+#        proxy_redirect off;
+#    }
+
+#    location / {
+#         root /opt/larixcpm/artifacts/$http_host;
+#         try_files $uri $uri/ /index.html?$query_string;
+#    }
+
+#}
+
+server {
+    listen 443 ssl http2;
+    server_name _;
+    index index.html;
+
+    ssl_certificate "/etc/ssl/certs/nginx-selfsigned.crt";
+    ssl_certificate_key "/etc/ssl/private/nginx-selfsigned.key";
+
+    client_max_body_size 500M;
+
+
+    location ~ ^/api/static/(.*)$ {
+        default_type application/javascript;
+
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS' always;
+        add_header Cache-Control 'no-store, no-cache';
+        add_header Content-Encoding gzip;
+
+        access_log  on;
+        alias /opt/lstatic/$1;
+    }
+
+    location ~ ^/(api.*|depot.*)$ {
+        root      /opt/larixcpm-core;
+        try_files $uri @backend;
+    }
+
+    location @backend {
+        proxy_connect_timeout           1000s;
+        proxy_send_timeout              1000s;
+        proxy_read_timeout              1000s;
+        proxy_buffering                 off;
+        proxy_temp_file_write_size      64k;
+
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_pass     http://gunicorn;
+        proxy_redirect off;
+    }
+
+    location / {
+         root /opt/larixcpm/artifacts/$http_host;
+         try_files $uri $uri/ /index.html?$query_string;
+    }
+}
+larixadm@sh35larixapp01:/opt$ https://larix.halsdev.ru$
+larixadm@sh35larixapp01:/opt$ logout
